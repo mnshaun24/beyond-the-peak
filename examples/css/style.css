@@ -1,0 +1,21 @@
+:root {
+    --primary-dark: #072227;
+    --primary-medium: #35858B;
+    --primary-light: #4FBDBA;
+    --primary-lighter: #4FBDBA;
+}
+
+.nav {
+    background-color: var(--primary-medium);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--primary-lighter);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
