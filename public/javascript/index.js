@@ -22,3 +22,5 @@ var displayDrink = function(data) {
 }
 
 getRandomDrink();
+
+module.exports = getRandomDrink;
