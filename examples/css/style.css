@@ -1,8 +1,14 @@
 :root {
     --primary-dark: #072227;
     --primary-medium: #35858B;
-    --primary-light: #4FBDBA;
-    --primary-lighter: #4FBDBA;
+    --primary-light: #5ececa;
+    --primary-lighter: #82f7f3;
+}
+
+/* NAVBAR */
+
+navbar ul {
+    padding: 1.5% 0;
 }
 
 .nav {
@@ -14,8 +20,36 @@
     color: var(--primary-lighter);
 }
 
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* HEADER */
+
 header {
     display: flex;
     justify-content: center;
-    padding: 5%;
+    padding: 3%;
+    background-color: var(--primary-medium);
+}
+
+header h1 {
+    color: white;
+}
+
+/* MAIN BODY */
+
+.container-fluid {
+    height: 100vh;
+    width: 100%vw;
+    background-color: var(--primary-lighter);
+}
+
+.drink-box {
+    background-color: var(--primary-light);
+    height: 600px;
+    width: 600px;
+    border-radius: 0 0 8% 8%;
+    margin: 0 10px 20px 10px;
 }
