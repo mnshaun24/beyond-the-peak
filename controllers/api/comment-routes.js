@@ -68,6 +68,15 @@ router.put('/upvote', (req, res) => {
     .catch(err => res.json(err));
 })
 
+router.put('/downvote', (req, res) => {
+    Vote.create({
+        user_id: req.body.user_id,
+        comment_id: req.body.post_id
+    })
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => res.json(err));
+})
+
 router.put('/:id', (req, res) => {
     Comment.update(
         {
