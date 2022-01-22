@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Comment, User } = require('../../models');
+const { Comment, User, Vote } = require('../../models');
+const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
     Comment.findAll({
@@ -55,6 +56,25 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     })
+})
+
+// PUT /api/posts/upvote
+router.put('/upvote', (req, res) => {
+    Vote.create({
+        user_id: req.body.user_id,
+        comment_id: req.body.post_id
+    })
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => res.json(err));
+})
+
+router.put('/downvote', (req, res) => {
+    Vote.create({
+        user_id: req.body.user_id,
+        comment_id: req.body.post_id
+    })
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => res.json(err));
 })
 
 router.put('/:id', (req, res) => {
