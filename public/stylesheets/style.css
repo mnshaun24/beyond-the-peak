@@ -87,3 +87,7 @@ footer .col-6 h4, footer .col-6 p {
 
 /* COMMENTS PAGE */
 
+#comment-board {
+    width: 100%;
+    height: 80%;
+}
