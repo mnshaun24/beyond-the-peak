@@ -1,4 +1,14 @@
-<div id="drink-container">
+<section class="container-fluid justify-content-center">
+    <div class="row justify-content-center">
+        <div class="drink-image col-6 justify-content-center m-4 mt-5" id="drink-container">
+            {{!-- <h2 class="mt-5">* Display Drink Image *</h2> --}}
+            <button class="new-drink-btn btn btn-outline-dark">I don't want this stupid drink.</button>
+        </div>
+        <div class="drink-description col-6 justify-content-center m-4 mt-5">
+            <h2 class="mt-5">{{ Drink Name }}</h2>
+            <p>{{ Drink Description }}</p>
+        </div>
+    </div>
+</section>
 
-</div>
 <script src="/javascript/index.js"></script>
