@@ -1,15 +1,15 @@
-// const router = require('express').Router();
+const router = require('express').Router();
 
-// const apiRoutes = require('./api');
-// const homepageRoutes = require("./homepage-routes");
-// const commentboardRoutes = require("./commentboard-routes");
+const apiRoutes = require('./api');
+const homepageRoutes = require("./homepage-routes");
+const commentboardRoutes = require("./commentboard-routes");
 
-// router.use("/", homepageRoutes);
-// router.use('/api', apiRoutes);
-// router.use("/commentboard", commentboardRoutes);
+router.use("/", homepageRoutes);
+router.use('/api', apiRoutes);
+router.use("/commentboard", commentboardRoutes);
 
-// router.use((req, res) => {
-//   res.status(404).end();
-// });
+router.use((req, res) => {
+  res.status(404).end();
+});
 
-// module.exports = router;
+module.exports = router;
