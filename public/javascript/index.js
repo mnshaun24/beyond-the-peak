@@ -21,6 +21,9 @@ var displayDrink = function(data) {
     newDiv.appendChild(cocktailName);
 }
 
-getRandomDrink();
+function findNewDrink(event) {
+    event.preventDefault();
+    getRandomDrink();
+};
 
-module.exports = getRandomDrink;
+getRandomDrink();
