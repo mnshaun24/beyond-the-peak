@@ -33,7 +33,8 @@ header {
     justify-content: center;
     padding: 3%;
     background: url("../images/header-image.jpg") center no-repeat;
-    /* background-color: var(--primary-medium); */
+    background-color: var(--primary-dark);
+    background-size: cover;
 }
 
 header h1 {
@@ -43,14 +44,14 @@ header h1 {
 
 header h6 {
     color: var(--primary-lighter);
-    margin-bottom: 25%;
+    margin-bottom: 35%;
     text-align: center;
 }
 
 /* MAIN BODY */
 
 .container-fluid {
-    height: 80vh;
+    height: auto;
     width: 100%vw;
     background-color: var(--primary-lighter);
 }
@@ -62,12 +63,12 @@ header h6 {
 }
 
 .drink-image {
-    height: 500px;
+    height: 400px;
     width: 600px;
 }
 
 .drink-description {
-    height: 300px;
+    height: 400px;
     width: 600px;
 }
 
