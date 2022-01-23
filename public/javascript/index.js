@@ -19,7 +19,7 @@ var displayDrink = function(data) {
     clearCurrentDrink();
     var display = document.querySelector('#drink-container');
     var newDiv = document.createElement('div');
-    newDiv.classList = 'cocktail';
+    newDiv.classList = 'cocktail mt-5';
 
     display.appendChild(newDiv);
 
