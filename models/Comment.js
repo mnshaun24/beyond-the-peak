@@ -11,7 +11,11 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        content: {
+        drink_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        drink_description: {
             type: DataTypes.STRING,
             allowNull: false
         },

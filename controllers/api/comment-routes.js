@@ -4,7 +4,7 @@ const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
     Comment.findAll({
-        attributes: ['id', 'content', 'created_at'],
+        attributes: ['id', 'drink_name', 'drink_description', 'created_at'],
         order: [['created_at', 'DESC']],
         include: [
             {
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'content', 'created_at'],
+        attributes: ['id', 'drink_name', 'drink_description', 'created_at'],
         include: [
             {
                 model: User,
@@ -48,7 +48,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     Comment.create({
-        content: req.body.content,
+        drink_name: req.body.drink_name,
+        drink_description: req.body.drink_description,
         user_id: req.body.user_id
     })
     .then(dbCommentData => res.json(dbCommentData))
@@ -80,7 +81,8 @@ router.put('/downvote', (req, res) => {
 router.put('/:id', (req, res) => {
     Comment.update(
         {
-            content: req.body.content
+            drink_name: req.body.drink_name,
+            drink_description: req.body.drink_description
         },
         {
             where: {
