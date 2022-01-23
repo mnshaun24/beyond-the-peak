@@ -6,4 +6,37 @@ router.get('/', (req, res) => {
     res.render('homepage');
 })
 
+router.get('/commentboard/:id', (req, res) => {
+    Comment.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'drink_name',
+            'drink_description',
+            'created_at'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbCommentData => {
+        if (!dbCommentData) {
+            res.status(404).json({ message: 'No comment found with this id' });
+            return;
+        }
+        const comment = dbCommentData.get({ plain: true });
+
+        res.render('commentboard', { comment });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+})
+
 module.exports = router;

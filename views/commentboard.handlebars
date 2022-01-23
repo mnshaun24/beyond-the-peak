@@ -1,0 +1,21 @@
+<form id="comment-form">
+    <div>
+        <label for="drink-name">Drink Name</label>
+        <input type="text" id="drink-name" name="drink-name">
+        <label for="drink-description">Drink description</label>
+        <input type="text" id="drink-description" name="drink-description">
+    </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+</form>
+
+<article>
+    <div>
+        <h2>{{comment.drink_name}}</h2>
+        <p>{{comment.drink_description}}</p>
+    </div>
+    <div>
+        created by {{comment.user.username}} on {{comment.created_at}}
+    </div>
+</article>
