@@ -8,7 +8,15 @@ var getRandomDrink = function() {
      })
  }
 
+ var clearCurrentDrink = function() {
+     if (document.querySelector('#drink-container').innerHTML) {
+        document.querySelector('#drink-container').innerHTML = "";
+     }
+     return;
+ }
+
 var displayDrink = function(data) {
+    clearCurrentDrink();
     var display = document.querySelector('#drink-container');
     var newDiv = document.createElement('div');
     newDiv.classList = 'cocktail';
