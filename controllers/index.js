@@ -4,8 +4,8 @@ const apiRoutes = require('./api');
 const homepageRoutes = require("./homepage-routes");
 const commentboardRoutes = require("./commentboard-routes");
 
-router.use("/", homepageRoutes);
 router.use('/api', apiRoutes);
+router.use("/", homepageRoutes);
 router.use("/commentboard", commentboardRoutes);
 
 router.use((req, res) => {
