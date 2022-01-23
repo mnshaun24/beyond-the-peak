@@ -10,12 +10,20 @@
     </div>
 </form>
 
-<article>
+{{#if comment.length}}
+<section>
     <div>
-        <h2>{{comment.drink_name}}</h2>
-        <p>{{comment.drink_description}}</p>
-    </div>
-    <div>
-        created by {{comment.user.username}} on {{comment.created_at}}
-    </div>
-</article>
+        <h2>Comments</h2>
+        <ol>
+            {{#each comment}}
+            <li>
+                {{comment.drink_name}} <br>
+                {{comment.drink_description}} <br>
+                Created by {{comment.user.username}} on {{comment.created_at}}
+            </li>
+            {{/each}}
+        </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
