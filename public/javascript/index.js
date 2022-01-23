@@ -24,6 +24,7 @@ var displayDrink = function(data) {
     display.appendChild(newDiv);
 
     var cocktailName = document.createElement('h2');
+    cocktailName.classList = 'mt-5';
     cocktailName.textContent = data.drinks[0].strDrink;
 
     newDiv.appendChild(cocktailName);

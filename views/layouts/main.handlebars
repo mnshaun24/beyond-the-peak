@@ -9,65 +9,19 @@
   <title>Beyond the Peak</title>
 </head>
 <body>
-  <navbar>
-      <ul class="nav bg-dark justify-content-center">
-          <li class="nav-item">
-              <button class="btn btn-outline-light mx-2">
-                  <a aria-current="page" href="./">Home</a>
-              </button>
-          </li>
-          <li class="nav-item">
-              <button class="btn btn-outline-light mx-2">
-                  <a href="#">Comments</a>
-              </button>
-          </li>
-          <li class="nav-item">
-              <button class="btn btn-outline-light mx-2">
-                  <a href="#">Morning After Results</a>
-              </button>
-          </li>
-          <li class="nav-item">
-              <button class="btn btn-outline-light mx-2">
-                  <a href="#">Login / Sign-Up</a>
-              </button>
-          </li>
-        </ul>
-  </navbar>
-
-  <header>
-      <div class="row">
-          <div class="col-12 mx-5 mb-5">
-              <h1>
-                  BEYOND THE PEAK
-              </h1>
-              <div class="h6-box">
-                  <h6>
-                      Random Drink Generator
-                  </h6>
-              </div>
-          </div>
-      </div>
-  </header>
 
   <main>
+    {{> navbar }}
+    {{> header }}
     {{{ body }}}
-    <div>Random variables</div>
+    {{> footer }}
+    {{!-- <div>Random variables</div>
     <div>How sloshed are you?</div>
 
-    <div>Find me a new drink button</div>
+    <div>Find me a new drink button</div> --}}
   </main>
 
-  <footer class="row bg-dark d-flex align-items-center pt-2 mx-0">
-      <div class="footer-start col-6">
-          <h4>All rights reserved.</h4>
-          <p>&copy; 2022 BEYOND THE PEAK</p>
-      </div>
-      <div class="footer-end col-6">
-          <p>Built by Shaun S, Greg L, & Bryan D</p>
-      </div>
-  </footer>
-
-    <button id="new-drink" type="submit">Find me a new drink button</button>
+    
 
 
     <script src="/javascript/reset-button.js"></script>
