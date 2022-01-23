@@ -7,16 +7,36 @@ router.get('/', (req, res) => {
 })
 
 router.get('/commentboard/:id', (req, res) => {
-    const comment = {
-        id: 1,
-        drink_name: 'Screwdriver',
-        drink_description: 'Orange juice and vodka. boring',
-        created_at: new Date(),
-        user: {
-            username: 'test_user'
+    Comment.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'drink_name',
+            'drink_description',
+            'created_at'
+        ],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbCommentData => {
+        if (!dbCommentData) {
+            res.status(404).json({ message: 'No comment found with this id' });
+            return;
         }
-    }
-    res.render('commentboard', { comment });
+        const comment = dbCommentData.get({ plain: true });
+
+        res.render('commentboard', { comment });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 })
 
 module.exports = router;
