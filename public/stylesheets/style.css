@@ -69,18 +69,18 @@ img {
 }
 
 .drink-image {
-    height: 400px;
+    height: 450px;
     width: 600px;
     justify-content: center;
 }
 
 #drink-image-container {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 
 .drink-description {
-    height: 400px;
+    height: 450px;
     width: 600px;
 }
 
