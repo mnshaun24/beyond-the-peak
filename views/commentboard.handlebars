@@ -1,3 +1,4 @@
+{{#if loggedIn}}
 <form id="comment-form">
     <div>
         <label for="drink-name">Drink Name</label>
@@ -9,6 +10,7 @@
         <button type="submit">Add Comment</button>
     </div>
 </form>
+{{/if}}
 
 {{#if comment.length}}
 <section>
@@ -26,4 +28,6 @@
 </section>
 {{/if}}
 
+{{#if loggedIn}}
 <script src="/javascript/add-post.js"></script>
+{{/if}}
