@@ -18,7 +18,7 @@ async function addCommentHandler(event) {
     if (response.ok) {
         console.log(drink_name);
         console.log(drink_description);
-        //document.location.reload();
+        document.location.reload();
     } else {
         alert(response.statusText);
     }

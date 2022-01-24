@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
         Comment.create({
             drink_name: req.body.drink_name,
             drink_description: req.body.drink_description,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
