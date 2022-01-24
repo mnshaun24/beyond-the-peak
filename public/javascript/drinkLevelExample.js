@@ -19,22 +19,25 @@ let getTopping = function(topping) {
     return topping[Math.floor(Math.random() * topping.length)];
 }
 
-let levelSelect = function() {
+let levelSelect = function(event) {
+    event.preventDefault();
     clearLevel();
-
 
     let level = document.querySelector('#level-container');
     let pEl = document.createElement('p');
+    pEl.setAttribute('id', 'pEl');
     pEl.textContent = '';
     level.appendChild(pEl);
-    
-    // this needs work
-    if (levelOne) {
-        pEl.textContent = "Add " + getInclude(include) + ' ' + getAlcTypes(alcTypes);
-    } else if (levelTwo) {
-        pEl.textContent += " and " + getMixer(mixer);
-    } else if (levelThree) {
-        pEl.textContent += " along with some " + getTopping(topping);
+
+    if (event.target === document.querySelector('#level-one')) {
+        let levelOneEl = document.querySelector('#pEl');
+        levelOneEl.textContent = "Add " + getInclude(include) + ' ' + getAlcTypes(alcTypes);
+    } else if (event.target === document.querySelector('#level-two')) {
+        let levelTwoEl = document.querySelector('#pEl');
+        levelTwoEl.textContent = "Add " + getInclude(include) + ' ' + getAlcTypes(alcTypes) + " and " + getMixer(mixer);
+    } else if (event.target === document.querySelector('#level-three')) {
+        let levelThreeEl = document.querySelector('#pEl');
+        levelThreeEl.textContent = "Add " + getInclude(include) + ' ' + getAlcTypes(alcTypes) + " and " + getMixer(mixer) + " along with some " + getTopping(topping);
     }
 
 }
@@ -43,20 +46,26 @@ let clearLevel = function() {
     document.querySelector('#level-container').innerHTML = '';
 }
 
-levelOne = function(event) {
-    event.preventDefault();
-    levelSelect();
-}
+// levelOne = function(event) {
+//     event.preventDefault();
+//     levelSelect();
+//     let levelOneEl = document.querySelector('#pEl');
+//     levelOneEl.textContent = "Add " + getInclude(include) + ' ' + getAlcTypes(alcTypes);
+// }
 
-levelTwo = function(event) {
-    event.preventDefault();
-    levelSelect();
-}
+// levelTwo = function(event) {
+//     event.preventDefault();
+//     levelSelect();
+//     let levelTwoEl = document.querySelector('#pEl');
+//     levelTwoEl.textContent += " and " + getMixer(mixer);
+// }
 
-levelThree = function(event) {
-    event.preventDefault();
-    levelSelect();
-}
+// levelThree = function(event) {
+//     event.preventDefault();
+//     levelSelect();
+//     let levelThreeEl = document.querySelector('#pEl');
+//     levelThreeEl.textContent += " along with some " + getTopping(topping);
+// }
 
 document.querySelector("#level-one").addEventListener("click", levelSelect);
 document.querySelector("#level-two").addEventListener("click", levelSelect);
