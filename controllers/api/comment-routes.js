@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const { Comment, User } = require('../../models');
+const { Comment, User, Vote } = require('../../models');
+const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
     Comment.findAll({
-        attributes: ['id', 'content', 'created_at'],
+        attributes: ['id', 'drink_name', 'drink_description', 'created_at'],
         order: [['created_at', 'DESC']],
         include: [
             {
@@ -24,7 +25,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'content', 'created_at'],
+        attributes: ['id', 'drink_name', 'drink_description', 'created_at'],
         include: [
             {
                 model: User,
@@ -46,15 +47,37 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    Comment.create({
-        content: req.body.content,
-        user_id: req.body.user_id
+    if (req.session) {
+        Comment.create({
+            drink_name: req.body.drink_name,
+            drink_description: req.body.drink_description,
+            user_id: req.session.user_id
+        })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+    }
+})
+
+// PUT /api/posts/upvote
+router.put('/upvote', (req, res) => {
+    Vote.create({
+        user_id: req.body.user_id,
+        comment_id: req.body.post_id
     })
     .then(dbCommentData => res.json(dbCommentData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+    .catch(err => res.json(err));
+})
+
+router.put('/downvote', (req, res) => {
+    Vote.create({
+        user_id: req.body.user_id,
+        comment_id: req.body.post_id
     })
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => res.json(err));
 })
 
 router.put('/:id', (req, res) => {

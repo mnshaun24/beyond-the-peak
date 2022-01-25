@@ -1,0 +1,33 @@
+{{#if loggedIn}}
+<form id="comment-form">
+    <div>
+        <label for="drink-name">Drink Name</label>
+        <input type="text" id="drink-name" name="drink-name">
+        <label for="drink-description">Drink description</label>
+        <input type="text" id="drink-description" name="drink-description">
+    </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+</form>
+{{/if}}
+
+{{#if comments.length}}
+<section>
+    <div>
+        <h2>Comments</h2>
+        <ol>
+            {{#each comments}}
+            <li>
+                {{drink_name}} <br>
+                {{drink_description}} <br>
+                Created by {{user.username}} on {{format_date created_at}}
+            </li>
+            {{/each}}
+        </ol>
+</section>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/add-post.js"></script>
+{{/if}}
