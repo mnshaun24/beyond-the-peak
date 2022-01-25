@@ -46,27 +46,6 @@ let clearLevel = function() {
     document.querySelector('#level-container').innerHTML = '';
 }
 
-// levelOne = function(event) {
-//     event.preventDefault();
-//     levelSelect();
-//     let levelOneEl = document.querySelector('#pEl');
-//     levelOneEl.textContent = "Add " + getInclude(include) + ' ' + getAlcTypes(alcTypes);
-// }
-
-// levelTwo = function(event) {
-//     event.preventDefault();
-//     levelSelect();
-//     let levelTwoEl = document.querySelector('#pEl');
-//     levelTwoEl.textContent += " and " + getMixer(mixer);
-// }
-
-// levelThree = function(event) {
-//     event.preventDefault();
-//     levelSelect();
-//     let levelThreeEl = document.querySelector('#pEl');
-//     levelThreeEl.textContent += " along with some " + getTopping(topping);
-// }
-
 document.querySelector("#level-one").addEventListener("click", levelSelect);
 document.querySelector("#level-two").addEventListener("click", levelSelect);
 document.querySelector("#level-three").addEventListener("click", levelSelect);
