@@ -1,9 +1,15 @@
 <section class="container-fluid justify-content-center">
     <div class="row justify-content-center">
         <div class="drink-description justify-content-center m-4 mt-5 align-items-middle">
+            {{> radial }}
+            <div id="random-container" class="mt-5">
+            </div>
             <div id="drink-container" class="mb-5">
             {{!-- <h2 class="mt-5">{{ Drink Name }}</h2> --}}
             {{!-- <p>{{ Drink Description }}</p> --}}
+            </div>
+            <div id="random-one">
+                
             </div>
             <button id="new-drink" class="new-drink-btn btn btn-outline-dark mt-5" type="submit">
                 I don't want this drink.
@@ -22,4 +28,6 @@
 
 <script src="/javascript/save.js"></script>
 <script src="/javascript/index.js"></script>
+<script src="/javascript/random-options.js"></script>
 <script src="/javascript/reset-button.js"></script>
+
