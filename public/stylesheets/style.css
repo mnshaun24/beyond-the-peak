@@ -74,13 +74,25 @@ header h6 {
     border-radius: 15px;
 }
 
+img {
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .drink-image {
-    height: 400px;
+    height: 450px;
     width: 600px;
+    justify-content: center;
+}
+
+#drink-image-container {
+    width: 400px;
+    height: 400px;
 }
 
 .drink-description {
-    height: 400px;
+    height: 450px;
     width: 600px;
 }
 

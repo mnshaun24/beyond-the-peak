@@ -1,14 +1,14 @@
-async function addPostHandler(event) {
+async function addCommentHandler(event) {
     event.preventDefault();
 
-    const drinkName = document.querySelector("input[name='drink-name']").value.trim();
-    const description = document.querySelector("input[name='description']").value.trim();
+    const drink_name = document.querySelector("input[name='drink-name']").value.trim();
+    const drink_description = document.querySelector("input[name='drink-description']").value.trim();
 
     const response = await fetch ("/api/comments", {
         method: "POST",
         body: JSON.stringify({
-            drinkName,
-            description
+            drink_name,
+            drink_description
         }),
         headers: {
             "Content-Type": "application/json"
@@ -16,10 +16,12 @@ async function addPostHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace("/commentboard");
+        console.log(drink_name);
+        console.log(drink_description);
+        document.location.reload();
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector(".add-drink").addEventListener("submit", addPostHandler);
+document.querySelector("#comment-form").addEventListener("submit", addCommentHandler);
