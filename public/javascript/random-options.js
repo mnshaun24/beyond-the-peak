@@ -34,6 +34,8 @@ function midDrunk() {
     display.appendChild(randomTwo).appendChild(includeText)
 };
 
+
+
 // function highDrunk() {
 //     var display = document.querySelector("#random-one")
 //     var randomOne = document.createElement("div")
