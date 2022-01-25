@@ -1,67 +1,58 @@
 // create set arrays to use for random displays
 const alcTypes = ["tequila", "vodka", "rum", "gin", "bourbon", "scotch", "whiskey", "cognac", "brandy", "vermouth", "liqueur", "absinthe"];
-const include = ["a splash of", "a few drops of", "a shot of", "a hint of", "mixed with"];
+const include = ["a splash of", "a few drops of", "a shot of", "a hint of", "a mix of"];
 const mixer = ["root beer", "coke", "sprite", "water", "OJ", "Dr. Pepper", "pineapple juice", "tomato juice", "tonic water", "lemonade", "carbonated water"];
 const topping = ["salt", "pepper", "tobasco", "lemon", "lime", "sugar", "berries", "mint", "cinnamon"];
 
 // return random item from the arrays to the page
 
-function lowDrunk() {
-    var display = document.querySelector("#random-one")
-    var randomOne = document.createElement("div")
-    var randomDrink = Math.floor(Math.random()*alcTypes.length)
-    var firstVariable = alcTypes[randomDrink]
-    var drinkText = document.createElement("p")
-
-    drinkText.textContent = ("Made with " + firstVariable)
-
-    display.appendChild(randomOne).appendChild(drinkText)
+let getAlcTypes = function(alcTypes) {
+    return alcTypes[Math.floor(Math.random() * alcTypes.length)];
 };
 
-function midDrunk() {
-    var randomDrink = Math.floor(Math.random()*alcTypes.length)
-    var randomDrinkAlt = Math.floor(Math.random()*alcTypes.length)
-    var firstVariable = alcTypes[randomDrink]
-    var firstVariableAlt = alcTypes[randomDrinkAlt]
-    var display = document.querySelector("#random-one")
-    var randomTwo = document.createElement("div")
-    var randomInclude = Math.floor(Math.random()*include.length)
-    var secondVariable = include[randomInclude]
-    var includeText = document.createElement("p")
-
-    includeText.textContent = ("Made with " + firstVariable + " and include " + secondVariable + " " + firstVariableAlt)
-
-    display.appendChild(randomTwo).appendChild(includeText)
+let getInclude = function(include) {
+    return include[Math.floor(Math.random() * include.length)];
 };
 
+let getMixer = function(mixer) {
+    return mixer[Math.floor(Math.random() * mixer.length)];
+};
 
+let getTopping = function(topping) {
+    return topping[Math.floor(Math.random() * topping.length)];
+};
 
-// function highDrunk() {
-//     var display = document.querySelector("#random-one")
-//     var randomOne = document.createElement("div")
-//     var randomDrink = Math.floor(Math.random()*alcTypes.length)
-//     var firstVariable = alcTypes[randomDrink]
-//     var drinkText = document.createElement("p")
+let levelSelect = function(event) {
+    event.preventDefault();
+    clearLevel();
 
-//     drinkText.textContent = firstVariable
+    let randomContainer = document.querySelector('#random-container');
+    let pEl = document.createElement('p');
+    pEl.setAttribute('id', 'pEl');
+    pEl.textContent = '';
+    randomContainer.appendChild(pEl);
 
-//     display.appendChild(randomOne).appendChild(drinkText)
-// };
+    if (event.target === document.querySelector('#low-drunk')) {
+        let levelOneEl = document.querySelector('#pEl');
+        levelOneEl.textContent = "Made with " + getAlcTypes(alcTypes);
+    } else if (event.target === document.querySelector('#mid-drunk')) {
+        let levelTwoEl = document.querySelector('#pEl');
+        levelTwoEl.textContent = "Made with " + getAlcTypes(alcTypes) + " and include " + getInclude(include) + " " + getAlcTypes(alcTypes);
+    } else if (event.target === document.querySelector('#high-drunk')) {
+        let levelThreeEl = document.querySelector('#pEl');
+        levelThreeEl.textContent = "Made with " + getAlcTypes(alcTypes) + " and include " + getInclude(include) + " " + getAlcTypes(alcTypes) + " mix it with " + getMixer(mixer);
+    } else if (event.target === document.querySelector("#too-drunk")) {
+        let levelFourEl = document.querySelector("#pEl");
+        levelFourEl.textContent = "Made with " + getAlcTypes(alcTypes) + " and include " + getInclude(include) + " " + getAlcTypes(alcTypes) + " mix it with " + getMixer(mixer) + " and top it off with some " + getTopping(topping);
+    }
 
-// function lowDrunk() {
-//     var display = document.querySelector("#random-one")
-//     var randomOne = document.createElement("div")
-//     var randomDrink = Math.floor(Math.random()*alcTypes.length)
-//     var firstVariable = alcTypes[randomDrink]
-//     var drinkText = document.createElement("p")
+};
 
-//     drinkText.textContent = firstVariable
+let clearLevel = function() {
+    document.querySelector('#random-container').innerHTML = '';
+};
 
-//     display.appendChild(randomOne).appendChild(drinkText)
-// };
-
-
-document.querySelector("#low-drunk").addEventListener("click", lowDrunk);
-document.querySelector("#mid-drunk").addEventListener("click", midDrunk);
-// document.querySelector("#high-drunk").addEventListener("click", randomMixer);
-// document.querySelector("#too-drunk").addEventListener("click", randomTopping);
+document.querySelector("#low-drunk").addEventListener("click", levelSelect);
+document.querySelector("#mid-drunk").addEventListener("click", levelSelect);
+document.querySelector("#high-drunk").addEventListener("click", levelSelect);
+document.querySelector("#too-drunk").addEventListener("click", levelSelect);
