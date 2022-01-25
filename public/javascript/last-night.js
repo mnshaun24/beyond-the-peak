@@ -1,5 +1,5 @@
 function lastNightList() {
-    let list = JSON.parse(window.localStorage.getItem('key'));
+    let list = JSON.parse(window.localStorage.getItem('list'));
 
     var display = document.querySelector('#list-of-drinks');
     var newDiv = document.createElement('div');
