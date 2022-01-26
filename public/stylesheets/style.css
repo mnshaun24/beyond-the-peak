@@ -116,21 +116,21 @@ footer .col-6 h4, footer .col-6 p {
     color: white;
 }
 
-/* COMMENTS PAGE & LOGIN / SIGNUP PAGE */
+/* COMMENTS PAGE & LOGIN / SIGNUP PAGE / RESULTS PAGE */
 
 #comment-form, #login-form, #signup-form {
     border-radius: 15px;
 }
 
-.comments-container {
+.comments-container, .results-container {
     background-color: var(--primary-lighter);
     width: inherit;
 }
 
 .dots {
     height:fit-content;
-    width: 50px;
-    border-bottom: 10px dotted rgb(211, 211, 211);
+    width: 55px;
+    border-bottom: 10px dotted rgba(211, 211, 211, 0.301);
 }
 
 .comments-ul {
@@ -154,6 +154,27 @@ footer .col-6 h4, footer .col-6 p {
 .empty-container {
     height: 100px;
 }
+
+.results-empty-container {
+    height: 50px;
+    background-color: var(--primary-medium-dark);
+}
+
+.results-container h2, .results-container p {
+    color: var(--primary-medium-dark);
+}
+
+.the-drinks-h5 {
+    font-weight: lighter;
+}
+
+#drink-list {
+    font-size: larger;
+    font-weight: bold;
+}
+
+
+/*//////////////////////////////// RADIAL SETUP ///////////////////////////////////*/
 
 /* Got the radial menu from the following and modified it for our app use */
 /*! Mozilla Public License, v. 2.0, http://mozilla.org/MPL/2.0/. */
