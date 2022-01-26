@@ -56,3 +56,4 @@ document.querySelector("#low-drunk").addEventListener("click", levelSelect);
 document.querySelector("#mid-drunk").addEventListener("click", levelSelect);
 document.querySelector("#high-drunk").addEventListener("click", levelSelect);
 document.querySelector("#too-drunk").addEventListener("click", levelSelect);
+document.querySelector("#new-drink").addEventListener("click", clearLevel);

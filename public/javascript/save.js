@@ -7,6 +7,7 @@ function saveDrinkHandler() {
 
     var drink = document.getElementById('drink-name-save');
     textContent = drink.textContent;
+    
     existingEntries.push(textContent);
     localStorage.setItem('list', JSON.stringify(existingEntries));
 }

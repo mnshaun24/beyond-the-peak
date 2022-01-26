@@ -1,5 +1,6 @@
 :root {
     --primary-dark: #072227;
+    --primary-medium-dark: #1c4649;
     --primary-medium: #35858B;
     --primary-light: #5ececa;
     --primary-lighter: #82f7f3;
@@ -11,10 +12,20 @@
 		--icon-size: 25px;
 		--font-size: 1;
 		--background-color: transparent; 
-		--color: black;
+		--color: var(--primary-medium-dark);
 
 		--ml: calc( var(--radius) / 2 + 1rem);
 		--mr: calc(var(--radius) / 2 + 1rem);
+}
+
+/* UNIVERSAL */
+
+h2, h5 {
+    color: var(--primary-medium-dark);
+}
+
+p {
+    color: var(--primary-medium)
 }
 
 /* NAVBAR */
@@ -109,6 +120,35 @@ footer .col-6 h4, footer .col-6 p {
 
 #comment-form {
     border-radius: 15px;
+}
+
+.comments-container {
+    background-color: var(--primary-lighter);
+    width: inherit;
+}
+
+.dots {
+    height:fit-content;
+    width: 50px;
+    border-bottom: 10px dotted rgb(211, 211, 211);
+}
+
+.comments-ul {
+    list-style: none;
+    margin-bottom: 5%;
+}
+
+.comments-ul li {
+    margin-bottom: 3%;
+}
+
+.comments-ul li h5 {
+    font-style: italic;
+}
+
+.comments-ul li p {
+    color: var(--primary-medium);
+    font-size: 0.75rem;
 }
 
 /* Got the radial menu from the following and modified it for our app use */
@@ -280,7 +320,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 		font-size: calc( var(--icon-size) * var(--font-size) * 0.66) !important ;
 		line-height: calc( var(--icon-size) * var(--font-size) ) !important; 
 		background-color: transparent; 
-		color: black;
+		color: rgb(0, 0, 0);
 		border-radius: none; 
 	}
 	
