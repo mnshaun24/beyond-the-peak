@@ -116,9 +116,9 @@ footer .col-6 h4, footer .col-6 p {
     color: white;
 }
 
-/* COMMENTS PAGE */
+/* COMMENTS PAGE & LOGIN / SIGNUP PAGE */
 
-#comment-form {
+#comment-form, #login-form, #signup-form {
     border-radius: 15px;
 }
 
@@ -149,6 +149,10 @@ footer .col-6 h4, footer .col-6 p {
 .comments-ul li p {
     color: var(--primary-medium);
     font-size: 0.75rem;
+}
+
+.empty-container {
+    height: 100px;
 }
 
 /* Got the radial menu from the following and modified it for our app use */
