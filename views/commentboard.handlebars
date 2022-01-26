@@ -24,18 +24,25 @@
 {{/if}}
 
 {{#if comments.length}}
-<section class="comments-container container">
-    <div class="col-12">
-        <h2>Comments</h2>
-        <ol>
+<section class="container-fluid comments-container m-0 p-3 d-flex justify-content-center">
+    <div>
+        <div class="col-12 d-flex justify-content-center">
+            <h2>Comments</h2>
+        </div>
+        <div class="d-flex justify-content-center my-3">
+            <div class="dots align-self-center"></div>
+        </div>
+
+        <ul class="comments-ul p-0">
             {{#each comments}}
             <li>
-                {{drink_name}} <br>
+                <h5 class="mb-0">{{drink_name}}</h5>
                 {{drink_description}} <br>
-                Created by {{user.username}} on {{format_date created_at}}
+                <p>Created by {{user.username}} on {{format_date created_at}}</p>
             </li>
             {{/each}}
-        </ol>
+        </ul>
+    </div>
 </section>
 {{/if}}
 
