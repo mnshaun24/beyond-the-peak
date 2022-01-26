@@ -1,4 +1,7 @@
 {{#if loggedIn}}
+<div class="col-12 mt-5 d-flex justify-content-center">
+    <h2>Make a comment on a drink you tried!</h2>
+</div>
 <div class="comment-form-container container d-flex justify-content-center">
     <form id="comment-form" class="col border border-2 m-5 px-3 bg-dark text-light">
         <div class="col-12 mb-3">
@@ -21,8 +24,8 @@
 {{/if}}
 
 {{#if comments.length}}
-<section>
-    <div>
+<section class="comments-container container">
+    <div class="col-12">
         <h2>Comments</h2>
         <ol>
             {{#each comments}}
