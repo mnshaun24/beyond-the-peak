@@ -151,20 +151,6 @@ img {
     font-weight: bold;
 }
 
-/* FOOTER */
-
-.footer-start {
-    text-align: start;
-}
-
-.footer-end {
-    text-align: end;
-}
-
-footer .col-6 h4, footer .col-6 p {
-    color: white;
-}
-
 /* COMMENTS PAGE & LOGIN / SIGNUP PAGE / RESULTS PAGE */
 
 #comment-form, #login-form, #signup-form {
@@ -220,6 +206,65 @@ footer .col-6 h4, footer .col-6 p {
 #drink-list {
     font-size: larger;
     font-weight: bold;
+}
+
+/* FOOTER */
+
+.footer-start {
+    text-align: start;
+}
+
+.footer-end {
+    text-align: end;
+}
+
+footer .col-6 h4, footer .col-6 p {
+    color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 390px) {
+
+    /* HOMEPAGE */
+
+    .drink-description {
+        height: 550px;
+        width: 350px;
+    }
+
+    .about-container {
+        height: 600px;
+        width: 350px;
+    }    
+
+    #drink-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    #random-container {
+        height: 80px;
+        margin-bottom: 20px;;
+    }
+
+    #pEl {
+        font-size: 1rem;
+    }
+
+    #save-btn, #new-drink {
+        margin: 2%;
+    }
+
+    /* FOOTER */
+
+    .footer-start p, .footer-end p {
+        font-size: 0.6rem;
+    }
+
+    .footer-start h4 {
+        font-size: 1rem;
+    }
 }
 
 
