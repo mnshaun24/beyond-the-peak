@@ -33,10 +33,16 @@ var displayDrink = function(data) {
 
     display.appendChild(newDiv);
 
+    var drinkIntro = document.createElement("span");
+    drinkIntro.setAttribute("id", "drink-intro");
+    newDiv.appendChild(drinkIntro);
+
+    drinkIntro.textContent = (useIntro(intro));
+
     var cocktailName = document.createElement('h2');
     cocktailName.setAttribute('id', 'drink-name-save');
     cocktailName.classList = 'mt-5';
-    cocktailName.textContent = (useIntro(intro) + " " + data.drinks[0].strDrink);
+    cocktailName.textContent = (" " + data.drinks[0].strDrink);
 
     newDiv.appendChild(cocktailName);    
 
