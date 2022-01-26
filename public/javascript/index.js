@@ -29,7 +29,7 @@ var displayDrink = function(data) {
     // Display Drink Name
     var display = document.querySelector('#drink-container');
     var newDiv = document.createElement('div');
-    newDiv.classList = 'cocktail mt-5';
+    newDiv.classList = 'cocktail mt-1';
 
     display.appendChild(newDiv);
 
@@ -41,7 +41,7 @@ var displayDrink = function(data) {
 
     var cocktailName = document.createElement('h2');
     cocktailName.setAttribute('id', 'drink-name-save');
-    cocktailName.classList = 'mt-5';
+    cocktailName.classList = 'mt-1';
     cocktailName.textContent = (" " + data.drinks[0].strDrink);
 
     newDiv.appendChild(cocktailName);    

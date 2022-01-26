@@ -66,7 +66,7 @@ header h6 {
     text-align: center;
 }
 
-/* MAIN BODY */
+/* HOMEPAGE */
 
 .container-fluid {
     height: auto;
@@ -74,7 +74,7 @@ header h6 {
     background-color: var(--primary-lighter);
 }
 
-.drink-image, .drink-description {
+.about-container, .drink-description {
     background-color: var(--primary-light);
     text-align: center;
     border-radius: 15px;
@@ -86,15 +86,15 @@ img {
     background-repeat: no-repeat;
 }
 
-.drink-image {
+.about-container {
     height: 450px;
     width: 600px;
     justify-content: center;
 }
 
 #drink-image-container {
-    width: 400px;
-    height: 400px;
+    width: 100px;
+    height: 100px;
 }
 
 .drink-description {
