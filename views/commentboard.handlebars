@@ -1,30 +1,48 @@
 {{#if loggedIn}}
-<form id="comment-form">
-    <div>
-        <label for="drink-name">Drink Name</label>
-        <input type="text" id="drink-name" name="drink-name">
-        <label for="drink-description">Drink description</label>
-        <input type="text" id="drink-description" name="drink-description">
-    </div>
-    <div>
-        <button type="submit">Add Comment</button>
-    </div>
-</form>
+<div class="col-12 mt-4 d-flex justify-content-center">
+    <h2>Make a comment on a drink you tried!</h2>
+</div>
+<div class="comment-form-container container d-flex justify-content-center">
+    <form id="comment-form" class="col border border-2 m-4 px-3 bg-dark text-light">
+        <div class="col-12 mb-3">
+            <label class="form-label mt-3 fst-italic" for="drink-name">
+                Drink Name
+            </label>
+            <input class="form-control rounded" type="text" id="drink-name" name="drink-name">
+        </div>
+        <div class="col-12 mb-3">
+            <label class="form-label fst-italic" for="drink-description">
+                Drink Description & Comment
+            </label>
+            <input class="form-control rounded" type="text" id="drink-description" name="drink-description">
+        </div>
+        <div class="container d-flex justify-content-center">
+            <button class="btn btn-outline-light my-3" type="submit">Add Comment</button>
+        </div>
+    </form>
+</div>
 {{/if}}
 
 {{#if comments.length}}
-<section>
+<section class="container-fluid comments-container m-0 p-3 d-flex justify-content-center">
     <div>
-        <h2>Comments</h2>
-        <ol>
+        <div class="col-12 d-flex justify-content-center">
+            <h2>Comments</h2>
+        </div>
+        <div class="d-flex justify-content-center my-3">
+            <div class="dots align-self-center"></div>
+        </div>
+
+        <ul class="comments-ul p-0">
             {{#each comments}}
             <li>
-                {{drink_name}} <br>
+                <h5 class="mb-0">{{drink_name}}</h5>
                 {{drink_description}} <br>
-                Created by {{user.username}} on {{format_date created_at}}
+                <p>Created by {{user.username}} on {{format_date created_at}}</p>
             </li>
             {{/each}}
-        </ol>
+        </ul>
+    </div>
 </section>
 {{/if}}
 

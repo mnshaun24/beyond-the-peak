@@ -1,29 +1,65 @@
-<form id="login-form">
-    <div>
-        <label for="username-login">Username</label>
-        <input type="text" id="username-login">
+<div class="signup-heading container-fluid p-4 mb-3">
+    <div class="col-12 mt-3 d-flex justify-content-center">
+        <h5 class="fst-italic">Already a member?</h5>
     </div>
-    <div>
-        <label for="password-login">Password</label>
-        <input type="password" id="password-login">
+    <div class="col-12 mb-2 d-flex justify-content-center">
+        <h2>Login</h2>
     </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+</div>
 
-<form id="signup-form">
-    <div>
-        <label for="username-signup">Username</label>
-        <input type="text" id="username-signup">
+<div class="login-form-container container d-flex justify-content-center">
+    <form class="col border border-2 m-4 p-3 bg-dark text-light" id="login-form">
+        <div class="col-12 mb-3 d-flex justify-content-center">
+            <label class="form-label my-2 mx-3" for="username-login">
+                Username
+            </label>
+            <input class="rounded" type="text" id="username-login">
+        </div>
+        <div class="col-12 mb-3 d-flex justify-content-center">
+            <label class="form-label my-2 mx-3" for="password-login">
+                Password
+            </label>
+            <input class="rounded" type="password" id="password-login">
+        </div>
+        <div class="container d-flex justify-content-center">
+            <button class="btn btn-outline-light my-3 px-5" type="submit">
+                Login
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="signup-heading container-fluid p-4 my-3">
+    <div class="col-12 mt-3 d-flex justify-content-center">
+        <h5 class="fst-italic">Don't have an account?</h5>
     </div>
-    <div>
-        <label for="password-signup">Password</label>
-        <input type="password" id="password-signup">
+    <div class="col-12 mb-2 d-flex justify-content-center">
+        <h2>Sign Up!</h2>
     </div>
-    <div>
-        <button type="submit">Signup</button>
-    </div>
-</form>
+</div>
+
+<div class="signup-form-container container d-flex justify-content-center">
+    <form class="col border border-2 m-4 p-3 bg-dark text-light" id="signup-form">
+        <div class="col-12 mb-3 d-flex justify-content-center">
+            <label class="form-label my-2 mx-3" for="username-signup">
+                Username
+            </label>
+            <input class="rounded" type="text" id="username-signup">
+        </div>
+        <div class="col-12 mb-3 d-flex justify-content-center">
+            <label class="form-label my-2 mx-3" for="password-signup">
+                Password
+            </label>
+            <input class="rounded" type="password" id="password-signup">
+        </div>
+        <div class="container d-flex justify-content-center">
+            <button class="btn btn-outline-light my-3 px-5" type="submit">
+                Signup
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid empty-container mt-3"></div>
 
 <script src="/javascript/login.js"></script>
