@@ -3,7 +3,7 @@
     <h2>Make a comment on a drink you tried!</h2>
 </div>
 <div class="comment-form-container container d-flex justify-content-center">
-    <form id="comment-form" class="col border border-2 m-4 px-3 bg-dark text-light">
+    <form id="comment-form" class="col border border-2 m-4 mb-5 px-3 bg-dark text-light shadow">
         <div class="col-12 mb-3">
             <label class="form-label mt-3 fst-italic" for="drink-name">
                 Drink Name
@@ -35,7 +35,7 @@
 
         <ul class="comments-ul p-0">
             {{#each comments}}
-            <li>
+            <li class="border border-2 rounded-3 p-3">
                 <h5 class="mb-0">{{drink_name}}</h5>
                 {{drink_description}} <br>
                 <p>Created by {{user.username}} on {{format_date created_at}}</p>
