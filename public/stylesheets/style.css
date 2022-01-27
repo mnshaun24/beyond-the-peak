@@ -45,10 +45,6 @@ navbar ul {
     padding: 1.5% 0;
 }
 
-.nav {
-    background-color: var(--primary-medium);
-}
-
 a {
     text-decoration: none !important;
     color: inherit;
@@ -90,7 +86,7 @@ header h6 {
     font-weight: 600;
 }
 
-.container-fluid {
+.container-fluid-colored {
     height: auto;
     width: 100%vw;
     background-color: var(--primary-lighter);
@@ -118,7 +114,7 @@ img {
 }
 
 .drink-description {
-    height: 500px;
+    height: 550px;
     width: 600px;
 }
 
@@ -226,15 +222,21 @@ footer .col-6 h4, footer .col-6 p {
 
 @media (max-width: 390px) {
 
+    /* NAVBAR */
+
+    .header {
+        margin-top: 50px;
+    }
+
     /* HOMEPAGE */
 
     .drink-description {
-        height: 550px;
+        height: auto;
         width: 350px;
     }
 
     .about-container {
-        height: 600px;
+        height: auto;
         width: 350px;
     }    
 
@@ -254,6 +256,16 @@ footer .col-6 h4, footer .col-6 p {
 
     #save-btn, #new-drink {
         margin: 2%;
+    }
+
+    .about-li {
+        font-size: 1rem;;
+    }
+
+    /* RESULTS */
+
+    #drink-list {
+        font-size: 1rem;
     }
 
     /* FOOTER */
