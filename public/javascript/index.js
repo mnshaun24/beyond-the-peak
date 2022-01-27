@@ -33,6 +33,7 @@ var displayDrink = function(data) {
 
     display.appendChild(newDiv);
 
+            // Display random intro to drink name
     var drinkIntro = document.createElement("span");
     drinkIntro.setAttribute("id", "drink-intro");
     newDiv.appendChild(drinkIntro);

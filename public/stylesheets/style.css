@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 :root {
     --primary-dark: #072227;
     --primary-medium-dark: #1c4649;
@@ -20,6 +23,14 @@
 
 /* UNIVERSAL */
 
+h1, h2, h3, h4, h5, h6, a, label, input, button, lt {
+    font-family: 'Overpass', sans-serif;
+}
+
+p, li, span {
+    font-family: 'Quicksand', sans-serif;
+}
+
 h2, h5 {
     color: var(--primary-medium-dark);
 }
@@ -38,7 +49,7 @@ navbar ul {
     background-color: var(--primary-medium);
 }
 
-li a {
+a {
     text-decoration: none !important;
     color: inherit;
 }
@@ -68,6 +79,17 @@ header h6 {
 
 /* HOMEPAGE */
 
+#pEl {
+    color: var(--primary-medium-dark);
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.25rem;
+}
+
+#drink-intro {
+    font-size: larger;
+    font-weight: 600;
+}
+
 .container-fluid {
     height: auto;
     width: 100%vw;
@@ -86,34 +108,47 @@ img {
     background-repeat: no-repeat;
 }
 
+#drink-name-save {
+    color: var(--primary-dark)
+}
+
+#drink-image-container {
+    width: 150px;
+    height: 150px;
+}
+
+.drink-description {
+    height: 500px;
+    width: 600px;
+}
+
+#random-container {
+    height: 60px;
+}
+
 .about-container {
     height: 450px;
     width: 600px;
     justify-content: center;
 }
 
-#drink-image-container {
-    width: 100px;
-    height: 100px;
+.about-ul {
+    list-style: none;
 }
 
-.drink-description {
-    height: 450px;
-    width: 600px;
+.about-lt {
+    color: var(--primary-dark);
+    font-size: 1.75rem;
+    font-weight: bolder;
+} 
+
+.about-li {
+    font-size: 1.3rem;
+    margin: 1rem 0 1rem 0;
 }
 
-/* FOOTER */
-
-.footer-start {
-    text-align: start;
-}
-
-.footer-end {
-    text-align: end;
-}
-
-footer .col-6 h4, footer .col-6 p {
-    color: white;
+.about-span-bold {
+    font-weight: bold;
 }
 
 /* COMMENTS PAGE & LOGIN / SIGNUP PAGE / RESULTS PAGE */
@@ -171,6 +206,65 @@ footer .col-6 h4, footer .col-6 p {
 #drink-list {
     font-size: larger;
     font-weight: bold;
+}
+
+/* FOOTER */
+
+.footer-start {
+    text-align: start;
+}
+
+.footer-end {
+    text-align: end;
+}
+
+footer .col-6 h4, footer .col-6 p {
+    color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 390px) {
+
+    /* HOMEPAGE */
+
+    .drink-description {
+        height: 550px;
+        width: 350px;
+    }
+
+    .about-container {
+        height: 600px;
+        width: 350px;
+    }    
+
+    #drink-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    #random-container {
+        height: 80px;
+        margin-bottom: 20px;;
+    }
+
+    #pEl {
+        font-size: 1rem;
+    }
+
+    #save-btn, #new-drink {
+        margin: 2%;
+    }
+
+    /* FOOTER */
+
+    .footer-start p, .footer-end p {
+        font-size: 0.6rem;
+    }
+
+    .footer-start h4 {
+        font-size: 1rem;
+    }
 }
 
 
