@@ -105,16 +105,19 @@ img {
 }
 
 #drink-name-save {
-    color: var(--primary-dark)
+    color: var(--primary-dark);
+    font-weight: 700;
 }
 
 #drink-image-container {
     width: 150px;
     height: 150px;
+    border-radius: 15px;
+    box-shadow: 4px 8px 5px rgba(26, 25, 25, 0.096);
 }
 
 .drink-description {
-    height: 550px;
+    height: auto;
     width: 600px;
 }
 
@@ -123,7 +126,7 @@ img {
 }
 
 .about-container {
-    height: 450px;
+    height: auto;
     width: 600px;
     justify-content: center;
 }
@@ -182,6 +185,11 @@ img {
     font-size: 0.75rem;
 }
 
+#drink-description {
+    display: flex;
+    height: 10vh;
+}
+
 .empty-container {
     height: 100px;
 }
@@ -220,25 +228,67 @@ footer .col-6 h4, footer .col-6 p {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 390px) {
+@media (max-width: 415px) {
 
     /* NAVBAR */
 
+    .nav-item .btn {
+        border: none;
+        padding-left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align-last: start;
+    }
+
+    /* HEADER */
+
+    header {
+        background-position: 0 -100px;
+    }
+
     .header {
-        margin-top: 50px;
+        margin: 10px 0 10px 0;
+        height: 8vh;
+        padding: 2vw;
+        /* background-color: #293837cb; */
+        background-color: #b6f3f0b0;
+        border-radius: 15px;
+        box-shadow: 4px 8px 5px rgba(26, 25, 25, 0.5);
+    }
+
+    header h1, header h6 {
+        /* color: var(--primary-lighter); */
+        color: var(--primary-dark);
+        text-shadow: 2px 2px 3px rgba(26, 25, 25, 0.301);
+        margin: 0;
+        width: auto;
+    }
+
+    header h1 {
+        font-weight: 600;
+    }
+
+    header h6 {
+        font-weight: 300;
     }
 
     /* HOMEPAGE */
 
-    .drink-description {
-        height: auto;
-        width: 350px;
+    main {
+        z-index: 2;
     }
 
-    .about-container {
+    .drink-description, .about-container {
         height: auto;
         width: 350px;
-    }    
+        padding: 8%;
+    }
+
+    #drink-intro {
+        font-size: 4vw;
+    }
 
     #drink-image-container {
         width: 100px;
@@ -247,7 +297,7 @@ footer .col-6 h4, footer .col-6 p {
 
     #random-container {
         height: 80px;
-        margin-bottom: 20px;;
+        margin-bottom: 20px;
     }
 
     #pEl {
@@ -262,10 +312,22 @@ footer .col-6 h4, footer .col-6 p {
         font-size: 1rem;;
     }
 
+    /* COMMENT PAGE */
+
+    #make-comment-container {
+        padding: 0 8vw 0 8vw;
+        text-align: center;
+    }
+
+    #drink-description {
+        height: 8vh;
+    }
+
     /* RESULTS */
 
     #drink-list {
         font-size: 1rem;
+        text-align: center;
     }
 
     /* FOOTER */
@@ -276,6 +338,16 @@ footer .col-6 h4, footer .col-6 p {
 
     .footer-start h4 {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .header {
+        height: 10vh;
+    }
+
+    .drink-description {
+        width: 325px;
     }
 }
 
