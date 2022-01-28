@@ -2,15 +2,8 @@
     <div class="row justify-content-center">
         <div class="drink-description justify-content-center m-4 mt-5 align-items-middle shadow">
 
-            {{> radial }}
 
             <div id="drink-container" class="mb-0">
-            </div>
-
-            <div id="random-container" class="mt-0">
-            </div>
-
-            <div id="random-one">
             </div>
 
             <div class="container d-flex justify-content-center">
@@ -18,18 +11,27 @@
                 {{!-- Display Drink Image --}}
                 </div>
             </div>
+
+            {{> radial }}
+
+            <div id="random-container" class="mt-0">
+            </div>
+
+            <div id="random-one">
+            </div>
+
             
             <div class="my-1">
                 <button id="new-drink" class="new-drink-btn btn btn-outline-dark mx-2 shadow-sm" type="submit">
                     Try something different
                 </button>
-                <button id="save-btn" class="save-drink-btn btn btn-outline-dark mx-2 m-sm-2 shadow-sm" type="button" >
-                    Down the Hatch
+                <button id="save-btn" class="save-drink-btn btn btn-outline-dark mx-2 m-sm-2 px-4 shadow-sm" type="button" >
+                    <i class="fas fa-save pe-3"></i>Down the Hatch
                 </button>
             </div>
         </div>
 {{!-- ABOUT SECTIONS --}}
-        <div class="about-container col-6 align-items-center px-5 m-4 mt-5 shadow">
+        <div class="about-container col-6 align-items-center px-5 m-4 mb-5 shadow">
             <ul class="about-ul mt-2 p-0">
                 <lt class="about-lt">How this works:</lt>
 
